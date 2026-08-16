@@ -1,8 +1,13 @@
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
+import { COLORS } from '../../constants';
 export default function TabLayout() {
   return (
-    <Tabs>
+    <Tabs screenOptions={{headerShown:false,tabBarActiveTintColor:COLORS.primary,tabBarInactiveTintColor:'#CDCDEO',tabBarShowLabel:false,tabBarStyle:{
+      backgroundColor:"#fff",
+      borderTopWidth:1,
+      borderTopColor:"#FOFOFO",
+      height:56,padding:8    }}}>
         <Tabs.Screen name="index" options={{ tabBarIcon:({color,focused})=><Ionicons name={focused?'home':'home-outline'} size={26} color={color}/> }} />
          <Tabs.Screen name="cart" options={{ tabBarIcon:({color,focused})=><Feather name={focused?'shopping-cart':'shopping-cart'} size={26} color={color}/> }} />
 
